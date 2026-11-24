@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Devs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+     <link rel="icon" type="image/png" href="/losdicon.ico">
+</head>
+
+<body>
+
+    <div id="startScreen">
+        <h1>LOS DEVS</h1>
+        <button id="startButton">INICIAR</button>
+    </div>
+
+    <video id="introVideo" playsinline preload="auto">
+        <source src="/losdopen.mp4" type="video/mp4">
+    </video>
+    <script>
+        const button = document.getElementById("startButton");
+        const screen = document.getElementById("startScreen");
+        const video = document.getElementById("introVideo");
+
+        button.addEventListener("click", async function() {
+            screen.style.display = "none";
+            video.style.display = "block";
+
+            try {
+                await video.play();
+            } catch (error) {
+                console.error("Erro ao reproduzir vídeo:", error);
+                alert("Não foi possível reproduzir o vídeo.");
+                video.style.display = "none";
+                screen.style.display = "flex";
+            }
+        });
+
+        video.addEventListener("ended", function() {
+            window.location.replace("/page/mainsc.html");
+        });
+    </script>
+
+</body>
+</html>

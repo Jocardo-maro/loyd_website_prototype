@@ -1,0 +1,76 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #FFA500;
+            font-family: 'Press Start 2P', sans-serif;
+            overflow: hidden;
+        }
+
+        #startScreen {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background: #FFA500;
+            z-index: 2;
+        }
+
+        h1 {
+            color: white;
+            font-size: 64px;
+        }
+
+        button {
+            padding: 20px 30px;
+            background: #500368;
+            color: rgb(255, 255, 255);
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        button:hover {
+            background: #63466b;
+        }
+
+        #introVideo {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+
+/* =========================
+   ARRUINE O SITE
+========================= */
+
+html.arruinar,
+html.arruinar body,
+html.arruinar body * {
+    font-family: "Comic Sans MS", cursive !important;
+}
+
+.aaa-botao {
+    position: relative;
+    display: inline-block;
+}
+
+.aaa-circulo {
+    position: absolute;
+    width: 124%;
+    height: 145%;
+    top: -22.5%;
+    left: -12%;
+    object-fit: fill;
+    pointer-events: none;
+    z-index: 10;
+}

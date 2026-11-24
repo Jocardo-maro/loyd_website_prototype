@@ -1,0 +1,237 @@
+
+body {
+    background-color: #17041b;
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Press Start 2P', sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: #ffffff;
+    background-color: #333333;
+    padding: 5px 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 6px solid #241664;
+}
+
+p {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #86788a;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+p2 {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #86788a;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 0;
+}
+
+.loyd {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    width: 300px;
+    height: calc(100vh - 100px);
+    background-color: #483e4b;
+    z-index: -1;
+}
+
+.sidebarr {
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 150px;
+    height: calc(100vh - 100px);
+    background-color: #483e4b;
+    z-index: -1;
+}
+
+.botoes {
+    position: fixed;
+    left: 0;
+    top: 200px;
+    height: 145px;
+    width: 290px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.botoes button {
+    background-color: #241664 !important;
+    color: #c1a1cf !important;
+    border: 2px solid #330779 !important;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.botoes button:hover {
+    background-color: #a67abb !important;
+    color: #330779 !important;
+}
+
+.descricao {
+    position: fixed;
+    left: 10px;
+    top: 600px;
+    width: 270px;
+    min-height: 200px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    background-color: var(--descricao-fundo);
+    color: var(--descricao-texto);
+    border: 2px solid var(--descricao-borda);
+
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   TEMAS GLOBAIS
+========================= */
+
+:root {
+    --fundo: #17041b;
+    --texto: #ffffff;
+    --paragrafo: #86788a;
+    --cabecalho: #333333;
+    --borda: #241664;
+    --lateral: #483e4b;
+    --botao: #241664;
+    --botao-texto: #d277fc;
+    --botao-hover: #a67abb;
+    --descricao-fundo: #726c8d;
+    --descricao-texto: #ffffff;
+    --descricao-borda: #330779;
+}
+
+:root[data-theme="day"] {
+    --fundo: #eb864b;
+    --texto: #000000;
+    --paragrafo: #ffffff;
+    --cabecalho: #f74600;
+    --borda: #ff3c00;
+    --lateral: #ec600e;
+    --botao: #f12a07;
+    --botao-texto: #350c00;
+    --botao-hover: #ff8800;
+    --descricao-fundo: #ffb36b;
+    --descricao-texto: #350c00;
+    --descricao-borda: #fd3b0b;
+}
+
+body {
+    background-color: var(--fundo);
+}
+
+h1 {
+    background-color: var(--cabecalho);
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+p, p2 {
+    color: var(--paragrafo);
+}
+
+.sidebar, .sidebarr {
+    background-color: var(--lateral);
+}
+
+.botoes button {
+    background-color: var(--botao) !important;
+    color: var(--botao-texto) !important;
+    border-color: var(--borda) !important;
+}
+
+.botoes button:hover {
+    background-color: var(--botao-hover) !important;
+    color: var(--texto) !important;
+}
+
+
+/* =========================
+   ARRUINE O SITE
+========================= */
+
+html.arruinar,
+html.arruinar body,
+html.arruinar body * {
+    font-family: "Comic Sans MS", cursive !important;
+}
+
+
+/* =========================
+   MODO AAA
+========================= */
+
+/* Moldura dos botões */
+
+.aaa-botao {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+/* Círculos amarelos */
+
+.aaa-circulo {
+    position: absolute;
+    width: 124%;
+    height: 145%;
+    top: -22.5%;
+    left: -12%;
+    object-fit: fill;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Imagem central */
+
+.aaa-central {
+    position: fixed;
+    width: min(380px, 40vw);
+    height: min(380px, 45vh);
+    object-fit: contain;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Desativação */
+
+html:not(.modo-aaa) .aaa-circulo,
+html:not(.modo-aaa) .aaa-central {
+    display: none;
+}

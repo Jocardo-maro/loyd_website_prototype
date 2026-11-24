@@ -1,0 +1,197 @@
+
+:root {
+    --fundo-projetos: #17041b;
+    --painel-projetos: #726c8d;
+    --texto-projetos: #ffffff;
+    --borda-projetos: #241664;
+}
+
+:root[data-theme="day"] {
+    --fundo-projetos: #eb864b;
+    --painel-projetos: #f7b17c;
+    --texto-projetos: #350c00;
+    --borda-projetos: #ff4800;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--fundo-projetos);
+}
+
+/* TELA PROPORCIONAL */
+
+.tela {
+    position: absolute;
+    width: min(100vw, 177.037vh);
+    aspect-ratio: 3820 / 2160;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+/* IMAGEM DO JOGO - JANELA SUPERIOR ESQUERDA */
+
+.imagem-jogo {
+    position: absolute;
+    left: 11.33%;
+    top: 9.69%;
+    width: 34.18%;
+    height: 39.4%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* INFORMAÇÕES - JANELA SUPERIOR DIREITA */
+
+.informacoes {
+    position: absolute;
+    left: 49.15%;
+    top: 9.69%;
+    width: 41.15%;
+    height: 39.4%;
+    padding: 2%;
+    overflow: visible;
+    background: var(--painel-projetos);
+    color: var(--texto-projetos);
+    z-index: 1;
+    font-family: 'Audiowide', sans-serif;
+}
+
+.informacoes h2 {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: clamp(8px, 1.1vw, 22px);
+}
+
+.informacoes p {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: clamp(8px, 0.8vw, 16px);
+}
+
+/* DESCRIÇÃO - JANELA INFERIOR ESQUERDA */
+
+.descricao {
+    position: absolute;
+    left: 12.24%;
+    top: 57.27%;
+    width: 34.55%;
+    height: 39.4%;
+    padding: 2%;
+    overflow-y: auto;
+    background: var(--painel-projetos);
+    color: var(--texto-projetos);
+    z-index: 1;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: clamp(8px, 0.85vw, 17px);
+    line-height: 1.6;
+}
+
+/* BOTÕES NORMAIS */
+
+.camada-keys,
+.interface,
+.botao-pressionado {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+}
+
+.camada-keys {
+    z-index: 2;
+}
+
+.botao-pressionado {
+    z-index: 3;
+    display: none;
+}
+
+.interface {
+    z-index: 4;
+}
+
+/* ÁREAS CLICÁVEIS */
+
+.area {
+    position: absolute;
+    z-index: 5;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* BOTÃO DE ABRIR PROJETO */
+
+.start {
+    left: 49.2%;
+    top: 72%;
+    width: 19.4%;
+    height: 9.9%;
+}
+
+/* BOTÃO DO FÓRUM */
+
+.forum {
+    left: 68.3%;
+    top: 72%;
+    width: 21.5%;
+    height: 9.9%;
+}
+
+/* FILEIRA INFERIOR */
+
+.left {
+    left: 49.2%;
+    top: 85.1%;
+    width: 5.6%;
+    height: 9.9%;
+}
+
+.volume {
+    left: 56.6%;
+    top: 85.1%;
+    width: 5.6%;
+    height: 9.9%;
+}
+
+.settings {
+    left: 63.9%;
+    top: 85.1%;
+    width: 5.6%;
+    height: 9.9%;
+}
+
+.right {
+    left: 71.3%;
+    top: 85.1%;
+    width: 5.6%;
+    height: 9.9%;
+}
+
+.leave {
+    left: 79.6%;
+    top: 85.1%;
+    width: 10.2%;
+    height: 9.9%;
+}
+
+
+/* =========================
+   ARRUINE O SITE
+========================= */
+
+html.arruinar,
+html.arruinar body,
+html.arruinar body * {
+    font-family: "Comic Sans MS", cursive !important;
+}

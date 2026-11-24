@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/projeto.css">
+
+    <script src="/java/config.js"></script>
+
+    <title>Projetos - Los Devs</title>
+</head>
+
+<body>
+
+    <main class="tela">
+
+        <!-- CONTEÚDO ATRÁS DA INTERFACE -->
+
+        <img id="imagemProjeto" class="imagem-jogo" src="" alt="Imagem do projeto">
+
+        <section class="informacoes">
+            <h2 id="nomeProjeto">Nome do projeto</h2>
+            <p><strong>Integrantes:</strong> <span id="integrantes">A definir</span></p>
+            <p><strong>Gênero:</strong> <span id="genero">A definir</span></p>
+            <p><strong>Faixa etária:</strong> <span id="faixaEtaria">A definir</span></p>
+        </section>
+
+        <section class="descricao">
+            <p id="descricaoProjeto">
+                Descrição do projeto aparecerá aqui.
+            </p>
+        </section>
+
+        <!-- BOTÕES NORMAIS -->
+
+        <img class="camada-keys" src="/projetoimag/keys.png" alt="">
+
+        <!-- ESTADOS DOS BOTÕES PRESSIONADOS -->
+
+        <img id="startPressed" class="botao-pressionado" src="/projetoimag/startkey.png" alt="">
+        <img id="forumPressed" class="botao-pressionado" src="/projetoimag/forumkey.png" alt="">
+        <img id="leftPressed" class="botao-pressionado" src="/projetoimag/leftkey.png" alt="">
+        <img id="volumePressed" class="botao-pressionado" src="/projetoimag/volumekey.png" alt="">
+        <img id="settingsPressed" class="botao-pressionado" src="/projetoimag/settingkey.png" alt="">
+        <img id="rightPressed" class="botao-pressionado" src="/projetoimag/rightkey.png" alt="">
+        <img id="leavePressed" class="botao-pressionado" src="/projetoimag/leavekey.png" alt="">
+
+        <!-- MOLDURA PRINCIPAL -->
+
+        <img class="interface" src="/projetoimag/lodeviceui.png" alt="">
+
+        <!-- ÁREAS CLICÁVEIS -->
+
+        <button class="area start" id="startButton" aria-label="Abrir projeto"></button>
+        <button class="area forum" id="forumButton" aria-label="Fórum"></button>
+        <button class="area left" id="leftButton" aria-label="Projeto anterior"></button>
+        <button class="area volume" id="volumeButton" aria-label="Mutar música"></button>
+        <button class="area settings" id="settingsButton" aria-label="Configurações"></button>
+        <button class="area right" id="rightButton" aria-label="Próximo projeto"></button>
+        <button class="area leave" id="leaveButton" aria-label="Voltar"></button>
+
+        <audio id="musicaProjetos" loop></audio>
+
+    </main>
+    <script src="/java/tts.js"></script>
+    <script src="/java/projeto.js"></script>
+
+</body>
+</html>
