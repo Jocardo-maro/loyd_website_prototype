@@ -17,15 +17,29 @@ const projetos = [
         genero: "comédia, ação, suspense",
         faixaEtaria: "14 anos",
         descricao: "PARABÉNS! você, um anão vesgo, um ranzinza cor de uva e um tapado acabaram de naufragar na ilha mais temida da história! explore os vastos biomas, colete materiais, resolva quebra cabeças, mate criaturas de todos os tipos, USE A SUA ESTRATÉGIA e reconstrua o navio! (de preferência, tente voltar em um pedaço) e lembre-se: ninguém vai te ajudar!.",
-        pagina: "/dip.html",
+        pagina: "/page/di.html",
         musica: "/music/bongo.wav",
-        fala: "projetoIlhaDragao"
+        fala: "projetoIlhaDragao",
+
+        // ABERTURAS COMUNS: TODAS COM A MESMA CHANCE
+        videos: [
+            "/pageimagdi/beastopen.mp4",
+            "/pageimagdi/shipopen.mp4",
+            "/pageimagdi/shoreopen.mp4"
+        ],
+
+        // ABERTURA RARA: 1 EM 100
+        videoRaro: {
+            arquivo: "/pageimagdi/darknessopen.mp4",
+            chance: 0.01
+        }
     }
 
     // Adicione os próximos projetos aqui.
 ];
 
 let projetoAtual = 0;
+
 
 // ELEMENTOS DA PÁGINA
 
@@ -43,6 +57,96 @@ const volumeButton = document.getElementById("volumeButton");
 const settingsButton = document.getElementById("settingsButton");
 const rightButton = document.getElementById("rightButton");
 const leaveButton = document.getElementById("leaveButton");
+
+// ELEMENTOS DA ABERTURA EM VÍDEO
+
+const videoTela = document.getElementById("videoTela");
+const aberturaVideo = document.getElementById("aberturaVideo");
+
+let aberturaIniciada = false;
+
+
+// SISTEMA DE ABERTURA ALEATÓRIA
+
+function abrirProjeto(projeto) {
+
+    const videos = projeto.videos;
+    const videoRaro = projeto.videoRaro;
+
+    // Se o projeto não tiver vídeos, abre diretamente.
+    if (!Array.isArray(videos) || videos.length === 0) {
+        window.location.href = projeto.pagina;
+        return;
+    }
+
+    let videoEscolhido;
+
+    // PRIMEIRO: TESTA A CHANCE DA ABERTURA RARA
+
+    if (
+        videoRaro &&
+        videoRaro.arquivo &&
+        Math.random() < videoRaro.chance
+    ) {
+        videoEscolhido = videoRaro.arquivo;
+    } else {
+
+        // SE NÃO SORTEAR A RARA, ESCOLHE UMA COMUM
+        const indiceAleatorio = Math.floor(
+            Math.random() * videos.length
+        );
+
+        videoEscolhido = videos[indiceAleatorio];
+    }
+
+    aberturaIniciada = true;
+
+    // INTERROMPE A MÚSICA DO MENU
+    solicitacaoAtual++;
+    pararMusica();
+
+    // INTERROMPE QUALQUER FALA DO LOYD
+    if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+    }
+
+    // PREPARA A TELA DE VÍDEO
+    videoTela.hidden = false;
+    aberturaVideo.src = videoEscolhido;
+    aberturaVideo.load();
+
+    // AO TERMINAR, ABRE A PÁGINA DO PROJETO
+    aberturaVideo.onended = () => {
+        window.location.href = projeto.pagina;
+    };
+
+    // SE HOUVER ERRO NO ARQUIVO, SEGUE PARA O PROJETO
+    aberturaVideo.onerror = () => {
+        console.error("Erro ao carregar o vídeo:", videoEscolhido);
+        window.location.href = projeto.pagina;
+    };
+
+    // TENTA ATIVAR O MODO TELA CHEIA
+    if (videoTela.requestFullscreen) {
+        const telaCheia = videoTela.requestFullscreen();
+
+        if (telaCheia && telaCheia.catch) {
+            telaCheia.catch(erro => {
+                console.warn("Tela cheia indisponível:", erro);
+            });
+        }
+    }
+
+    // INICIA O VÍDEO
+    const reproducao = aberturaVideo.play();
+
+    if (reproducao && reproducao.catch) {
+        reproducao.catch(erro => {
+            console.error("Não foi possível reproduzir o vídeo:", erro);
+            window.location.href = projeto.pagina;
+        });
+    }
+}
 
 
 // SISTEMA DE ÁUDIO
@@ -145,7 +249,6 @@ function atualizarProjeto() {
     document.querySelector(".descricao").scrollTop = 0;
 
     // LOYD COMENTA O PROJETO ATUAL
-
     if (window.LosDevsTTS && projeto.fala) {
         window.LosDevsTTS.falar(projeto.fala);
     }
@@ -181,8 +284,12 @@ rightButton.addEventListener("click", () => {
 // BOTÃO DE INICIAR PROJETO
 
 startButton.addEventListener("click", () => {
+    if (aberturaIniciada) {
+        return;
+    }
+
     const projeto = projetos[projetoAtual];
-    window.location.href = projeto.pagina;
+    abrirProjeto(projeto);
 });
 
 
@@ -196,14 +303,14 @@ forumButton.addEventListener("click", () => {
 // CONFIGURAÇÕES
 
 settingsButton.addEventListener("click", () => {
-    window.location.href = "./configuracoes.html";
+    window.location.href = "/page/configuracoes.html";
 });
 
 
 // VOLTAR
 
 leaveButton.addEventListener("click", () => {
-    window.location.href = "./mainsc.html";
+    window.location.href = "/page/mainsc.html";
 });
 
 

@@ -133,14 +133,14 @@ p2 {
 }
 
 :root[data-theme="day"] {
-    --fundo: #eb864b;
+    --fundo: #fcdfcf;
     --texto: #000000;
     --paragrafo: #ffffff;
     --cabecalho: #f74600;
     --borda: #ff3c00;
-    --lateral: #ec600e;
-    --botao: #f12a07;
-    --botao-texto: #350c00;
+    --lateral: #ec790e;
+    --botao: #bb1c00;
+    --botao-texto: #fcfcfc;
     --botao-hover: #ff8800;
     --descricao-fundo: #ffb36b;
     --descricao-texto: #350c00;

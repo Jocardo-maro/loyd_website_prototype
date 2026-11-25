@@ -86,7 +86,9 @@
             equipe: [
                 "Equipe! Eu não quero conhecer ninguém, mas clique!",
                 "eu devia saber?",
-                "uma equipe?"
+                "uma equipe?",
+                "créditos!",
+                "a página onde vemos quem criou o site e cia"
             ],
 
             configuracoes: [
@@ -94,11 +96,12 @@
                 "configurações!",
                 "vamos ajustar o site",
                 "vai estragar o site?",
-                "vá em frente, ma não espere que eu não te julgue"
+                "vá em frente, mas não espere que eu não te julgue"
             ],
 
             extras: [
-                "Extras! O que poderia ter de extra pra mostrar?"
+                "Extras! O que poderia ter de extra pra mostrar?",
+                "vem em breve!"
             ],
                         projetoSaudacoes: [
                 "Projetos!",
@@ -249,7 +252,9 @@
             equipe: [
                 "The team!",
                 "I don't want to meet anyone, but go ahead, click it!",
-                "wow, there are people out there..."
+                "wow, there are people out there...",
+                "credits",
+                "let's give credit where and when it's due!"
             ],
 
             configuracoes: [

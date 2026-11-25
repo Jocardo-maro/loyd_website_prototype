@@ -1,0 +1,168 @@
+
+/* ESTRUTURA GERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: transparent;
+    font-family: 'Carnivalee Freakshow', sans-serif;
+
+    isolation: isolate;
+    overflow-x: hidden;
+}
+
+/* FUNDO ANIMADO */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("/pageimagdi/backgroundi.png");
+    background-repeat: repeat;
+    background-size: 1920px 1920px;
+    background-position: 0 0;
+
+    z-index: -1;
+    pointer-events: none;
+
+    animation: fundoDiagonal 180s linear infinite;
+}
+
+/* MOVIMENTO SEAMLESS */
+
+@keyframes fundoDiagonal {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 7640px 7640px;
+    }
+}
+
+/* CABEÇALHO */
+
+h1 {
+    position: relative;
+    z-index: 2;
+
+    font-family: 'Carnivalee Freakshow', sans-serif;
+    font-size: 65px;
+    font-weight: normal;
+
+    color: #f0e6d6;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 20px;
+    gap: 15px;
+
+    background-color: rgba(41, 41, 41, 0.85);
+}
+
+/* LOYD */
+
+.loyd {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* DIREITOS AUTORAIS */
+
+p2 {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+
+    margin-left: auto;
+    align-self: flex-end;
+
+    color: #cccccc;
+}
+
+/* NAVEGAÇÃO */
+
+.navegacao {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 100px;
+    padding: 10px;
+
+    background-color: #292929;
+}
+
+/* BOTÕES */
+
+.navegacao button {
+    border: none;
+    background: transparent;
+
+    color: #f0e6d6;
+
+    font-family: 'Carnivalee Freakshow', sans-serif;
+    font-size: 27px;
+    font-weight: normal;
+
+    padding: 8px 18px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* HOVER */
+
+.navegacao button:hover {
+    color: #d49b55;
+    transform: translateY(-3px);
+}
+
+/* CONTEÚDO */
+
+#conteudo {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    min-height: calc(100vh - 165px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px;
+}
+
+/* LOGO PRINCIPAL DA ILHA */
+
+.logo-ilha {
+    display: block;
+
+    width: min(85%, 1000px);
+    height: auto;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 1;
+}

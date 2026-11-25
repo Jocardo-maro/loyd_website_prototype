@@ -1,7 +1,7 @@
 
 :root {
     --fundo-projetos: #17041b;
-    --painel-projetos: #726c8d;
+    --painel-projetos: #3a0b55;
     --texto-projetos: #ffffff;
     --borda-projetos: #241664;
 }
@@ -194,4 +194,38 @@ html.arruinar,
 html.arruinar body,
 html.arruinar body * {
     font-family: "Comic Sans MS", cursive !important;
+}
+
+/* TELA DE ABERTURA DOS PROJETOS */
+
+.abertura-video[hidden] {
+    display: none !important;
+}
+
+.abertura-video {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.abertura-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+/* GARANTE A APARÊNCIA NA TELA CHEIA NATIVA */
+
+.abertura-video:fullscreen {
+    width: 100%;
+    height: 100%;
+    background: #000;
 }

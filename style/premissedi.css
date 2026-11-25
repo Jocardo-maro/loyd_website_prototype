@@ -1,0 +1,155 @@
+
+/* CONTEÚDO DA PREMISSA */
+
+.conteudo-premissa {
+    width: 100%;
+    min-height: calc(100vh - 165px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 45px 20px;
+    gap: 30px;
+}
+
+/* CAIXA CENTRAL */
+
+.caixa-premissa {
+    width: min(90%, 1100px);
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px;
+
+    background-color: #201a17;
+
+    border: 3px solid #8b633b;
+}
+
+/* LOGO */
+
+.logo-premissa {
+    display: block;
+
+    width: min(80%, 700px);
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 30px;
+}
+
+/* ÁREA DA DESCRIÇÃO */
+
+.descricao-premissa {
+    width: 100%;
+    min-height: 250px;
+
+    color: #f0e6d6;
+}
+
+/* TEXTO DA PREMISSA */
+
+.texto-premissa {
+    width: 100%;
+
+    font-family: 'Rye', serif;
+    font-size: 21px;
+    font-weight: normal;
+
+    line-height: 1.8;
+    text-align: justify;
+
+    color: #f0e6d6;
+}
+
+/* FILEIRA DE PERSONAGENS */
+
+.personagens-premissa {
+    width: min(90%, 1100px);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 35px;
+    padding: 10px 20px;
+}
+
+/* JACK */
+
+.gif-jack {
+    display: block;
+
+    width: 250px;
+    height: 230px;
+
+    object-fit: contain;
+
+    transition: transform 0.25s ease;
+    
+}
+
+/* RUGGER */
+
+.gif-rugger {
+    display: block;
+
+    width: 250px;
+    height: 160px;
+
+    object-fit: contain;
+
+    margin-top: 35px;
+
+    transition: transform 0.25s ease;
+}
+
+/* JOLLY */
+
+.gif-jolly {
+    display: block;
+
+    width: 250px;
+    height: 131px;
+
+    object-fit: contain;
+
+    margin-top: 40px;
+
+    transition: transform 0.25s ease;
+}
+
+/* EFEITOS DOS PERSONAGENS */
+
+.gif-jack:hover,
+.gif-rugger:hover,
+.gif-jolly:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .personagens-premissa {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .gif-jack,
+    .gif-rugger,
+    .gif-jolly {
+        width: 30%;
+        height: 170px;
+    }
+
+    .caixa-premissa {
+        padding: 20px;
+    }
+
+}
