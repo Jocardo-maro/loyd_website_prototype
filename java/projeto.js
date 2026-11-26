@@ -2,35 +2,35 @@
 const projetos = [
     {
         nome: "saudações",
-        imagem: "/loyd.png",
+        imagem: "../loyd.png",
         integrantes: "Aberano, GuimaArts, Jocardo, Test",
         genero: "????",
         faixaEtaria: "livre",
         descricao: "sejam bem vindos à aba de projetos, navegue para inspecionar e ver mais sobre nossos projetos.",
-        pagina: "/page/mainsc.html",
+        pagina: "./mainsc.html",
         fala: "projetoSaudacoes"
     },
     {
         nome: "Ilha do Dragão: Você não sabe onde está!",
-        imagem: "/projetoimag/dilogo.png",
+        imagem: "../projetoimag/dilogo.png",
         integrantes: "Aberano, GuimaArts, Jocardo, Test",
         genero: "comédia, ação, suspense",
         faixaEtaria: "14 anos",
         descricao: "PARABÉNS! você, um anão vesgo, um ranzinza cor de uva e um tapado acabaram de naufragar na ilha mais temida da história! explore os vastos biomas, colete materiais, resolva quebra cabeças, mate criaturas de todos os tipos, USE A SUA ESTRATÉGIA e reconstrua o navio! (de preferência, tente voltar em um pedaço) e lembre-se: ninguém vai te ajudar!.",
-        pagina: "/page/di.html",
-        musica: "/music/bongo.wav",
+        pagina: "./di.html",
+        musica: "../music/bongo.wav",
         fala: "projetoIlhaDragao",
 
         // ABERTURAS COMUNS: TODAS COM A MESMA CHANCE
         videos: [
-            "/pageimagdi/beastopen.mp4",
-            "/pageimagdi/shipopen.mp4",
-            "/pageimagdi/shoreopen.mp4"
+            "../pageimagdi/beastopen.mp4",
+            "../pageimagdi/shipopen.mp4",
+            "../pageimagdi/shoreopen.mp4"
         ],
 
         // ABERTURA RARA: 1 EM 100
         videoRaro: {
-            arquivo: "/pageimagdi/darknessopen.mp4",
+            arquivo: "../pageimagdi/darknessopen.mp4",
             chance: 0.01
         }
     }
@@ -303,14 +303,14 @@ forumButton.addEventListener("click", () => {
 // CONFIGURAÇÕES
 
 settingsButton.addEventListener("click", () => {
-    window.location.href = "/page/configuracoes.html";
+    window.location.href = "./configuracoes.html";
 });
 
 
 // VOLTAR
 
 leaveButton.addEventListener("click", () => {
-    window.location.href = "/page/mainsc.html";
+    window.location.href = "./mainsc.html";
 });
 
 

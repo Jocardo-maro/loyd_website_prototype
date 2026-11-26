@@ -83,12 +83,12 @@ if (tirarEfeito) {
 }
 
 const fundoProjetos = document.createElement("img");
-fundoProjetos.src = "/projetoimag/lobackground.png";
+fundoProjetos.src = "../projetoimag/lobackground.png";
 fundoProjetos.alt = "";
 fundoProjetos.className = "lo-background";
 
 const dispositivoProjetos = document.createElement("img");
-dispositivoProjetos.src = "/projetoimag/lodevice.png";
+dispositivoProjetos.src = "../projetoimag/lodevice.png";
 dispositivoProjetos.alt = "";
 dispositivoProjetos.className = "lo-device";
 

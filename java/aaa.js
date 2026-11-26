@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const tema = localStorage.getItem("losdevs-theme") || "night";
 
     const circulos = tema === "night"
-        ? ["/circle1n.png", "/circle2n.png", "/circle3n.png"]
-        : ["/circle1d.png", "/circle2d.png", "/circle3d.png"];
+        ? ["circle1n.png", "circle2n.png", "circle3n.png"]
+        : ["circle1d.png", "circle2d.png", "circle3d.png"];
 
     // Seleciona os botões da página
     const botoes = document.querySelectorAll("button");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         imagem.className = "aaa-circulo";
         imagem.src = new URL(
-            "/triplea/" + circulos[Math.floor(Math.random() * circulos.length)],
+            "../triplea/" + circulos[Math.floor(Math.random() * circulos.length)],
             document.baseURI
         ).href;
 
