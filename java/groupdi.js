@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 
         // Retorna à página principal do jogo
         setTimeout(() => {
-            window.location.href = "/page/di.html";
+            window.location.href = "/page/mainsc.html";
         }, 2000);
 
     });

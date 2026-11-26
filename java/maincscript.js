@@ -24,12 +24,14 @@ let ultimoBotao = null;
 let quantidadeHover = 0;
 
 botoes.forEach((botao, index) => {
+
     botao.addEventListener("mouseenter", function () {
+
         if (descricao) {
-            descricao.textContent = textos[index];
+            descricao.textContent = textos[index] || "";
         }
 
-        if (window.LosDevsTTS) {
+        if (window.LosDevsTTS && categoriasTTS[index]) {
             window.LosDevsTTS.falar(categoriasTTS[index]);
         }
 
@@ -41,6 +43,7 @@ botoes.forEach((botao, index) => {
         }
 
         if (quantidadeHover === 5) {
+
             if (window.LosDevsTTS) {
                 window.LosDevsTTS.falar("pare");
             }
@@ -48,20 +51,70 @@ botoes.forEach((botao, index) => {
             quantidadeHover = 0;
             ultimoBotao = null;
         }
+
     });
 
     botao.addEventListener("mouseleave", function () {
+
         if (descricao) {
             descricao.textContent = "";
         }
+
     });
+
 });
+
+// =========================
+// EFEITO DO BOTÃO PROJETOS
+// =========================
+
+const botaoProjetos = botoes[0];
+
+const tirarEfeito =
+    localStorage.getItem("losdevs-tirar-efeito") === "true";
+
+const efeito = document.createElement("div");
+
+efeito.className = "projetos-efeito";
+efeito.setAttribute("aria-hidden", "true");
+
+if (tirarEfeito) {
+    efeito.classList.add("sem-fundo-giratorio");
+}
+
+const fundoProjetos = document.createElement("img");
+fundoProjetos.src = "/projetoimag/lobackground.png";
+fundoProjetos.alt = "";
+fundoProjetos.className = "lo-background";
+
+const dispositivoProjetos = document.createElement("img");
+dispositivoProjetos.src = "/projetoimag/lodevice.png";
+dispositivoProjetos.alt = "";
+dispositivoProjetos.className = "lo-device";
+
+efeito.appendChild(fundoProjetos);
+efeito.appendChild(dispositivoProjetos);
+
+document.body.appendChild(efeito);
+
+if (botaoProjetos) {
+
+    botaoProjetos.addEventListener("mouseenter", function () {
+        efeito.classList.add("ativo");
+    });
+
+    botaoProjetos.addEventListener("mouseleave", function () {
+        efeito.classList.remove("ativo");
+    });
+
+}
 
 // =========================
 // MODO AAA: IMAGENS
 // =========================
 
 if (localStorage.getItem("losdevs-aaa") === "true") {
+
     document.documentElement.classList.add("modo-aaa");
 
     const tema = document.documentElement.dataset.theme || "night";
@@ -78,6 +131,7 @@ if (localStorage.getItem("losdevs-aaa") === "true") {
     ];
 
     botoes.forEach(botao => {
+
         botao.classList.add("aaa-botao");
 
         const imagem = document.createElement("img");
@@ -88,6 +142,7 @@ if (localStorage.getItem("losdevs-aaa") === "true") {
         imagem.alt = "";
 
         botao.appendChild(imagem);
+
     });
 
     // -------------------------
@@ -113,6 +168,7 @@ if (localStorage.getItem("losdevs-aaa") === "true") {
     ];
 
     // As imagens raras têm peso menor no sorteio.
+
     const opcoes = [
         ...imagensComuns,
         ...imagensComuns,
@@ -132,4 +188,5 @@ if (localStorage.getItem("losdevs-aaa") === "true") {
     central.alt = "";
 
     document.body.appendChild(central);
+
 }

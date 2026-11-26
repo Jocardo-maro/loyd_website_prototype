@@ -48,7 +48,6 @@ body {
     padding: 0;
 }
 
-
 /* =========================
    CABEÇALHO
 ========================= */
@@ -85,7 +84,6 @@ p, p2 {
     object-fit: contain;
 }
 
-
 /* =========================
    BARRAS LATERAIS
 ========================= */
@@ -113,7 +111,6 @@ p, p2 {
     background-color: var(--lateral);
     z-index: -1;
 }
-
 
 /* =========================
    ÁREA DE CONFIGURAÇÕES
@@ -147,21 +144,33 @@ p, p2 {
     line-height: 1.5;
 }
 
-
 /* =========================
-   CONTROLE DE TEMA
+   CONTROLES
 ========================= */
 
-.theme-control {
+.config-controls {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 40px;
     flex-wrap: wrap;
-
-    color: var(--texto);
 }
 
+.config-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 450px;
+
+    gap: 12px;
+    text-align: center;
+}
+
+.config-control span {
+    color: var(--texto);
+    font-size: 13px;
+}
 
 /* =========================
    BOTÕES
@@ -179,8 +188,6 @@ p, p2 {
 
     font-family: 'Press Start 2P', sans-serif;
     font-size: 10px;
-
-    top: 10px;
 }
 
 .config-container button:hover {
@@ -192,6 +199,32 @@ p, p2 {
     margin-top: 10px;
 }
 
+/* =========================
+   CONTROLE DE TAMANHO
+========================= */
+
+#fontSizeControl {
+    width: min(100%, 350px);
+    cursor: pointer;
+    accent-color: var(--botao-hover);
+}
+
+/* =========================
+   SELETOR DE IDIOMA
+========================= */
+
+#languageSelect {
+    background-color: var(--botao);
+    color: var(--botao-texto);
+
+    border: 2px solid var(--borda);
+    padding: 10px;
+
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 10px;
+
+    cursor: pointer;
+}
 
 /* =========================
    ARRUINE O SITE
@@ -203,19 +236,10 @@ html.arruinar body * {
     font-family: "Comic Sans MS", cursive !important;
 }
 
+/* =========================
+   MODO AAA
+========================= */
 
-.config-controls {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.config-control {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .aaa-botao {
     position: relative;
     display: inline-block;
@@ -223,11 +247,15 @@ html.arruinar body * {
 
 .aaa-circulo {
     position: absolute;
+
     width: 124%;
     height: 145%;
+
     top: -22.5%;
     left: -12%;
+
     object-fit: fill;
     pointer-events: none;
+
     z-index: 10;
 }
